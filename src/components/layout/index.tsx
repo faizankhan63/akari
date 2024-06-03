@@ -5,14 +5,16 @@ import notificationBell from '../../../assets/icons/app-icon/notification-bell.s
 import accountIcon from '../../../assets/icons/app-icon/account-icon.svg';
 import arrowDown from '../../../assets/icons/app-icon/arrow-head-down.svg';
 
+import Sidebar from './sidebar';
+
 import style from './layout.module.scss';
 
-const Layout = ({ children }) => {
+const Layout = ({ pageTitle, children }) => {
   return (
     <main className={style.mainLayout}>
       <div className={style.topHeader}>
         <div className={style.title}>
-          <h1>Dashboard</h1>
+          <h1>{pageTitle || 'Page title'}</h1>
         </div>
         <div className={style.search}>
           <img src={searchIcon} alt="searchIcon" />
@@ -25,10 +27,13 @@ const Layout = ({ children }) => {
           </div>
           <div className={style.accountDiv}>
             <img src={accountIcon} alt="accountIcon" />
-            <span>Faizan Ali</span>
+            <span>Faizan Ali khan</span>
             <img src={arrowDown} alt="arrowDown" />
           </div>
         </div>
+      </div>
+      <div className={style.sideBar}>
+        <Sidebar />
       </div>
       <div className={style.childDiv}>{children}</div>
     </main>

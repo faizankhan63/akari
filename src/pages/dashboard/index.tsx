@@ -3,7 +3,7 @@ import style from './dashboard.module.scss';
 
 const index = () => {
   return (
-    <Layout>
+    <Layout pageTitle="Dashboard">
       <div className={style.mainWrapper}>
         <div>Dashboard</div>
       </div>

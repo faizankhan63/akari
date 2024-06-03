@@ -1,0 +1,56 @@
+@import '../../../styles/_mixin.scss';
+
+.main {
+  background-color: #fff;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 40px 30px 40px;
+  gap: 42px;
+}
+.routes {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 35px;
+  .page {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: flex-start;
+    height: 64px;
+    padding: 16px 24px 16px 24px;
+    border-radius: 16px;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      scale: 105%;
+      background: linear-gradient(90deg, #bc417236 0%, #30397536 100%);
+    }
+    span {
+      font-family: Poppins;
+      @include fontH6;
+      font-weight: 400;
+      line-height: 27px;
+      text-align: left;
+      color: #737791;
+    }
+  }
+  .active {
+    img {
+      filter: brightness(2.5);
+    }
+    &:hover {
+      scale: 100% !important;
+      background: linear-gradient(90deg, #bc4172 0%, #303975 100%) !important;
+    }
+    span {
+      color: #fff;
+      font-weight: 600;
+    }
+    background: linear-gradient(90deg, #bc4172 0%, #303975 100%);
+  }
+}
