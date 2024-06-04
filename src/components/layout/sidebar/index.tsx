@@ -33,7 +33,6 @@ const Sidebar = () => {
   return (
     <div className={style.main}>
       <img src={akari} alt="akari-logo" />
-
       <div className={style.routes}>
         {routes.map((route) => (
           <div
