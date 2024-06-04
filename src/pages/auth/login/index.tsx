@@ -1,15 +1,17 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+import { useNavigate } from 'react-router-dom';
 import logo from '../../../../assets/icons/app-icon/sidebar-icons/akari-logo.svg';
 import TextField from '../../../components/text-field';
 
 import style from '../auth.module.scss';
 
 const Login = () => {
+  const navigate = useNavigate();
   const handleHomeClick = () => {
-    window.location.href = '/';
+    navigate('/csv');
   };
   const handleForgotClick = () => {
-    window.location.href = '/forgot-password';
+    navigate('/forgot-password');
   };
   return (
     <div className={style.mainWrapper}>
