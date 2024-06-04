@@ -6,6 +6,7 @@ import CsvPage from '../pages/csv';
 import Settings from '../pages/settings';
 import Login from '../pages/auth/login';
 import ForgotPassword from '../pages/auth/forgot-password';
+import SignUp from '../pages/auth/signup';
 
 function AppRouter() {
   return (
@@ -18,6 +19,7 @@ function AppRouter() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/sign-up" element={<SignUp />} />
       </Routes>
     </HashRouter>
   );
