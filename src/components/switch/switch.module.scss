@@ -65,9 +65,7 @@ input:checked + .slider:before {
 
 .titleClass {
   font-weight: 500;
-  // @include font15;
   line-height: 27px;
-  // color: var(--font-c);
   margin-bottom: 5px;
   text-transform: capitalize;
 }
@@ -78,8 +76,6 @@ input:checked + .slider:before {
 
   h6 {
     font-weight: 400;
-    // @include font13;
-    // color: var(--stroke-b);
     text-transform: capitalize;
     margin-left: 10px;
     margin-bottom: 0px;
@@ -89,7 +85,6 @@ input:checked + .slider:before {
 .errorMessage {
   position: absolute;
   display: block;
-  // @include font13;
   margin-left: 5px;
   color: #ff5050;
 }
