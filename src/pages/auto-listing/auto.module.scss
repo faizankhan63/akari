@@ -1,4 +1,54 @@
+@import '../../styles/mixin';
+
 .mainWrapper {
   font-family: 'poppins';
   height: 100%;
+  padding: 32px;
+}
+.cardClass {
+  position: relative;
+  max-height: calc(100vh - 172px);
+  height: fit-content;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  .btnsDiv {
+    top: 45px;
+    right: 45px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    div {
+      width: 98.06px;
+      height: 39.23px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 7.85px;
+      border: 0.98px solid lightgrey;
+      cursor: pointer;
+
+      //text
+      font-family: Poppins;
+      @include fontB2;
+      font-weight: 500;
+      line-height: 19.61px;
+      text-align: left;
+      color: lightgrey;
+
+      &.selected {
+        border-color: #c3d3e2;
+        color: #0f3659;
+      }
+    }
+  }
 }

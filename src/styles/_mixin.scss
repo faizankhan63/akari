@@ -64,3 +64,8 @@
   font-weight: 400;
   font-size: calc(14px + (14 - 14) * (100vw - 375px) / (1440 - 375));
 }
+
+@mixin fontLight {
+  font-weight: 400;
+  font-size: calc(9px + (9 - 9) * (100vw - 375px) / (1440 - 375));
+}

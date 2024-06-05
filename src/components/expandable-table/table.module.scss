@@ -1,0 +1,125 @@
+@import '../../styles/mixin';
+
+.tableContainer {
+  .tableRow {
+    border-radius: 12px;
+    height: 60px;
+    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      scale: 101%;
+      box-shadow: 1px 6px 60px -6px rgba(0, 0, 0, 0.37);
+      -webkit-box-shadow: 1px 6px 20px -6px rgba(0, 0, 0, 0.37);
+      -moz-box-shadow: 1px 6px 20px -6px rgba(0, 0, 0, 0.37);
+    }
+    .arrowCell {
+      padding: 10px;
+      width: 50px;
+    }
+    .tableCell {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 5px;
+      flex: 1;
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        svg {
+          margin-left: -10px;
+        }
+      }
+      span {
+        font-family: Poppins;
+        @include fontB3;
+        color: #444a6d;
+        font-weight: 400;
+        text-align: left;
+      }
+      p {
+        font-family: Poppins;
+        @include fontLight;
+        font-weight: 400;
+        color: #96a5b8;
+        text-align: left;
+      }
+    }
+  }
+
+  .tableRowDetails {
+    transition: all 0.5s ease;
+    background-color: transparent;
+    max-height: 0px;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      padding: 0px 150px;
+      //text
+      font-family: Poppins;
+      @include fontB2;
+      font-weight: 400;
+      text-align: center;
+      color: #96a5b8;
+
+      th {
+        height: 40px;
+        border-bottom: 1px solid #edf2f6;
+        background-color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 12;
+      }
+
+      tbody {
+        max-height: 300px;
+        tr {
+          height: 80px;
+          td {
+            div {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            }
+            &:last-child {
+              width: 50px;
+              div {
+                margin-left: -80px;
+                svg {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .expandRow {
+    display: block;
+    margin-top: 22px;
+    max-height: 400px;
+    visibility: visible;
+    opacity: 1;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+  }
+}
