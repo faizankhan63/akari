@@ -5,11 +5,6 @@
 //   font-size: calc(smallscreenPX + (largeScreen - smallscreen) * (100vw - mobileScreenSizePx) / (DesktopScreen - mobileScreenSize));
 // }
 
-@mixin fontTitle {
-  font-weight: 600;
-  font-size: calc(38px + (60 - 38) * (100vw - 375px) / (1440 - 375));
-}
-
 @mixin fontH1 {
   font-weight: 600;
   font-size: calc(30px + (40 - 30) * (100vw - 375px) / (1440 - 375));
@@ -23,11 +18,6 @@
 @mixin fontH3 {
   font-weight: 600;
   font-size: calc(23px + (28 - 23) * (100vw - 375px) / (1440 - 375));
-}
-
-@mixin fontH4 {
-  font-weight: 600;
-  font-size: calc(21px + (24 - 21) * (100vw - 375px) / (1440 - 375));
 }
 
 @mixin fontH5 {
@@ -50,11 +40,6 @@
   font-size: calc(18px + (18 - 18) * (100vw - 375px) / (1440 - 375));
 }
 
-@mixin fontB-main {
-  font-weight: 400;
-  font-size: calc(16px + (16 - 16) * (100vw - 375px) / (1440 - 375));
-}
-
 @mixin fontB3 {
   font-weight: 400;
   font-size: calc(12px + (12 - 12) * (100vw - 375px) / (1440 - 375));
@@ -63,4 +48,9 @@
 @mixin fontB2 {
   font-weight: 400;
   font-size: calc(14px + (14 - 14) * (100vw - 375px) / (1440 - 375));
+}
+
+@mixin fontLight {
+  font-weight: 400;
+  font-size: calc(9px + (9 - 9) * (100vw - 375px) / (1440 - 375));
 }

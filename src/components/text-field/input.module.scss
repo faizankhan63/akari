@@ -36,6 +36,24 @@
       line-height: normal;
     }
   }
+  .errorInput {
+    &::placeholder {
+      @include fontB3;
+      color: #dc2626;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  .successInput {
+    &::placeholder {
+      @include fontB3;
+      color: #35dc26;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
 
   .icon {
     width: 24px;
@@ -61,18 +79,13 @@
   top: 7px;
 }
 
-.errorMessage {
-  position: absolute;
-  display: block;
-  color: #e92424;
-  // @include fontB1;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-left: 2px;
-  margin-top: 2px;
-}
-
 .errorBorder {
   border-bottom: '1px solid #e92424' !important;
+}
+
+.closedEye {
+  position: absolute;
+  top: 35%;
+  right: 15px;
+  cursor: pointer;
 }
