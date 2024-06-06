@@ -1,7 +1,6 @@
 @import '../../styles/_mixin.scss';
 
 .mainLayout {
-  // background-color: #64a7ea;
   background-color: #fafbfc;
   height: 100vh;
   width: 100%;
@@ -11,6 +10,9 @@
     position: fixed;
     bottom: 0;
     right: 0;
+    @media (max-width: 1440px) {
+      width: 100vw;
+    }
   }
 }
 .topHeader {
@@ -24,6 +26,94 @@
   align-items: center;
   justify-content: space-between;
   padding: 30px 66px 30px 40px;
+  z-index: 2;
+  @media (max-width: 1440px) {
+    width: 100vw;
+  }
+  .hamBurger {
+    position: relative;
+    display: none;
+    @media (max-width: 1440px) {
+      display: block;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+  .navMenu {
+    position: absolute;
+    background-color: #fff;
+    padding: 30px;
+    width: 300px;
+    height: 600px;
+    border-radius: 0px 0px 37px 0px;
+    z-index: 2;
+    top: 70px;
+    left: -40px;
+    max-height: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+
+    box-shadow: 3px 6px 11px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 3px 6px 11px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 6px 11px -8px rgba(0, 0, 0, 0.75);
+
+    .page {
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      justify-content: flex-start;
+      padding: 8px 12px 8px 12px;
+      border-radius: 16px;
+      transition: all 0.5s ease;
+      &:hover {
+        scale: 103%;
+        background: linear-gradient(90deg, #bc417236 0%, #30397536 100%);
+      }
+      span {
+        font-family: Poppins;
+        @include fontB2;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: left;
+        color: #737791;
+      }
+    }
+    .active {
+      width: fit-content;
+      img {
+        filter: brightness(2.5);
+      }
+      &:hover {
+        scale: 100% !important;
+        background: linear-gradient(90deg, #bc4172 0%, #303975 100%) !important;
+      }
+      span {
+        color: #fff;
+        font-weight: 600;
+      }
+      background: linear-gradient(90deg, #bc4172 0%, #303975 100%);
+    }
+    .iconDiv {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+  .navMenuShow {
+    opacity: 1;
+    visibility: visible;
+    max-height: 600px;
+  }
   .title {
     h1 {
       font-family: Poppins;
@@ -33,7 +123,8 @@
     }
   }
   .search {
-    width: 513px;
+    max-width: 513px;
+    flex: 1;
     border-radius: 16px;
     background: #f9fafb;
     height: 60px;
@@ -41,6 +132,10 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    @media (max-width: 1440px) {
+      max-width: 350px;
+    }
+
     input {
       padding: 10px;
       width: 90%;
@@ -50,7 +145,6 @@
       background: transparent;
       border: none;
 
-      //styleName: Text/Text Regular 1;
       font-family: Poppins;
       @include fontH6;
       font-weight: 400;
@@ -101,8 +195,18 @@
   }
 }
 .sideBar {
+  @media (max-width: 1440px) {
+    display: none;
+  }
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.backdropDiv {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+  z-index: 1;
 }

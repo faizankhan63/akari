@@ -24,7 +24,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 35px;
+  gap: 20px;
   .page {
     cursor: pointer;
     width: 100%;
@@ -41,7 +41,7 @@
     }
     span {
       font-family: Poppins;
-      @include fontH6;
+      @include fontH7;
       font-weight: 400;
       line-height: 27px;
       text-align: left;
