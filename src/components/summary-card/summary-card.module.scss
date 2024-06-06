@@ -11,7 +11,21 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 15px;
-
+  @media (max-width: 1024px) {
+    width: 120px;
+    padding: 15px;
+    gap: 10px;
+    img {
+      height: 30px;
+      width: 30px;
+    }
+  }
+  @media (max-width: 768px) {
+    width: fit-content;
+  }
+  @media (max-width: 440px) {
+    width: 100%;
+  }
   h2 {
     font-family: Poppins;
     @include fontH3;

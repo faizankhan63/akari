@@ -113,53 +113,67 @@ const ExpandableTable = ({ rows, className }) => {
                 alt="arrowDown"
               />
             </div>
-            {row?.columns?.map(
-              (col: { id: any; value: any; name: any }, colIndex: any) => (
-                <div key={col?.id} className={style.tableCell}>
-                  <span> {columnData[colIndex]?.render(col.value)}</span>
-                  <p> {col?.name && columnData[colIndex]?.render(col?.name)}</p>
-                </div>
-              ),
-            )}
+            <div key={row?.columns[0]?.id} className={style.tableCellLeft}>
+              <span> {columnData[0]?.render(row?.columns[0]?.value)}</span>
+              <p>
+                {' '}
+                {row?.columns[0]?.name &&
+                  columnData[0]?.render(row?.columns[0]?.name)}
+              </p>
+            </div>
+            <div className={style.tableCellRight}>
+              {row?.columns?.map(
+                (col: { id: any; value: any; name: any }, colIndex: any) => (
+                  <div key={col?.id} className={style.tableCell}>
+                    <span> {columnData[colIndex]?.render(col.value)}</span>
+                    <p>
+                      {' '}
+                      {col?.name && columnData[colIndex]?.render(col?.name)}
+                    </p>
+                  </div>
+                ),
+              )}
+            </div>
           </div>
-          {/* {expandedRow === index && ( */}
           <div
             className={`${expandedRow === index && style.expandRow} ${
               style.tableRowDetails
             }`}
           >
-            <table className={style.detailsTable}>
-              <thead>
-                <tr>
-                  <th>TICKET DETAILS</th>
-                  <th>TICKET TYPE</th>
-                  <th>FACE VALUE</th>
-                  <th>PRICE</th>
-                  <th>AVAILABLE</th>
-                  <th>SOLD</th>
-                  <th>PUBLISH</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                {row?.details?.map((detailRow: { id: any; columns: any }) => (
-                  <tr key={detailRow?.id}>
-                    {detailRow.columns.map(
-                      (
-                        detail: { id: any; value: any },
-                        detailColIndex: any,
-                      ) => (
-                        <td key={detail?.id}>
-                          {detailColumnData[detailColIndex]?.render(
-                            detail.value,
-                          )}
-                        </td>
-                      ),
-                    )}
+            <div className={style.tableContainerInner}>
+              <table className={style.detailsTable}>
+                <thead>
+                  <tr>
+                    <th>TICKET DETAILS</th>
+                    <th>TICKET TYPE</th>
+                    <th>FACE VALUE</th>
+                    <th>PRICE</th>
+                    <th>AVAILABLE</th>
+                    <th>SOLD</th>
+                    <th>PUBLISH</th>
+                    <th></th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {row?.details?.map((detailRow: { id: any; columns: any }) => (
+                    <tr key={detailRow?.id}>
+                      {detailRow.columns.map(
+                        (
+                          detail: { id: any; value: any },
+                          detailColIndex: any,
+                        ) => (
+                          <td key={detail?.id}>
+                            {detailColumnData[detailColIndex]?.render(
+                              detail.value,
+                            )}
+                          </td>
+                        ),
+                      )}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       ))}

@@ -13,10 +13,21 @@
   width: 100%;
   display: flex;
   gap: 22px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   .summaryCard {
     position: relative;
     gap: 0px;
     width: 70%;
+    @media (max-width: 1024px) {
+      padding: 15px;
+      width: 50%;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     .btnsDiv {
       top: 32px;
       right: 18px;
@@ -57,10 +68,24 @@
       display: flex;
       align-items: center;
       gap: 36px;
+      @media (max-width: 1024px) {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      @media (max-width: 768px) {
+        justify-content: space-evenly;
+      }
     }
   }
   .analyticsCard {
     width: 30%;
+    @media (max-width: 1024px) {
+      padding: 15px;
+      width: 50%;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 }
 .tableCardClass {
@@ -68,6 +93,10 @@
   max-height: calc(100vh - 172px);
   height: fit-content;
   overflow: auto;
+  @media (max-width: 768px) {
+    max-height: max-content;
+    overflow: visible;
+  }
 
   &::-webkit-scrollbar {
     width: 0;
@@ -84,6 +113,9 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     div {
       width: 98.06px;

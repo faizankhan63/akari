@@ -10,6 +10,11 @@
   max-height: calc(100vh - 172px);
   height: fit-content;
   overflow: auto;
+  @media (max-width: 768px) {
+    max-height: max-content;
+    overflow: visible;
+    padding: 30px 10px;
+  }
 
   &::-webkit-scrollbar {
     width: 0;
@@ -26,6 +31,9 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     div {
       width: 98.06px;

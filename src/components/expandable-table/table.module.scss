@@ -11,6 +11,13 @@
     background-color: transparent;
     width: 100%;
     transition: all 0.3s ease-in-out;
+    @media (max-width: 1024px) {
+      padding: 5px;
+    }
+    @media (max-width: 720px) {
+      height: fit-content;
+      padding: 10px;
+    }
     &:hover {
       scale: 101%;
       box-shadow: 1px 6px 60px -6px rgba(0, 0, 0, 0.37);
@@ -21,14 +28,66 @@
       padding: 10px;
       width: 50px;
     }
-    .tableCell {
-      display: flex;
+    .tableCellLeft {
+      display: none;
+      @media (max-width: 720px) {
+        display: flex;
+      }
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
       padding: 5px;
       flex: 1;
 
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        svg {
+          margin-left: -10px;
+        }
+      }
+      span {
+        font-family: Poppins;
+        @include fontB3;
+        color: #444a6d;
+        font-weight: 400;
+        text-align: left;
+      }
+      p {
+        font-family: Poppins;
+        @include fontLight;
+        font-weight: 400;
+        color: #96a5b8;
+        text-align: left;
+      }
+    }
+    .tableCellRight {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      @media (max-width: 720px) {
+        width: 50%;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+    .tableCell {
+      &:first-child {
+        @media (max-width: 720px) {
+          display: none;
+        }
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 5px;
+      flex: 1;
+      @media (max-width: 720px) {
+        padding: 0px;
+      }
       div {
         display: flex;
         align-items: center;
@@ -62,6 +121,12 @@
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
+
+    .tableContainer {
+      width: 100%;
+      overflow-x: auto;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -84,8 +149,10 @@
 
       tbody {
         max-height: 300px;
+
         tr {
           height: 80px;
+
           td {
             div {
               display: flex;
@@ -93,10 +160,17 @@
               align-items: center;
               justify-content: center;
             }
+
             &:last-child {
               width: 50px;
+
               div {
                 margin-left: -80px;
+
+                @media (max-width: 1024px) {
+                  margin-left: 0px;
+                }
+
                 svg {
                   cursor: pointer;
                 }
@@ -107,6 +181,7 @@
       }
     }
   }
+
   .expandRow {
     display: block;
     margin-top: 22px;
@@ -114,12 +189,22 @@
     visibility: visible;
     opacity: 1;
     overflow: auto;
+
     &::-webkit-scrollbar {
       width: 0;
       height: 0;
     }
+
     &::-webkit-scrollbar-thumb {
       background-color: transparent;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .tableRowDetails .tableContainerInner {
+      min-width: 1000px;
+      padding: 0;
+      overflow-x: auto;
     }
   }
 }

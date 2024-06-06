@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { useState } from 'react';
@@ -16,6 +17,8 @@ import setting from '../../../assets/icons/app-icon/sidebar-icons/setting.svg';
 import signout from '../../../assets/icons/app-icon/sidebar-icons/signout.svg';
 import discordGrey from '../../../assets/icons/app-icon/sidebar-icons/discord-grey.svg';
 import twitterGrey from '../../../assets/icons/app-icon/sidebar-icons/twitter-grey.svg';
+import akira from '../../../assets/icons/app-icon/sidebar-icons/akari-logo.svg';
+import cross from '../../../assets/icons/app-icon/cross-icon.svg';
 
 import Sidebar from './sidebar';
 
@@ -50,6 +53,13 @@ const Layout = ({ pageTitle, children }) => {
         <div className={style.hamBurger}>
           <img src={hamburger} alt="ham-burger-icon" onClick={handleOpenMenu} />
           <div className={`${openMenu && style.navMenuShow} ${style.navMenu}`}>
+            <div className={style.crossDiv}>
+              <img
+                src={cross}
+                onClick={() => setOpenMenu(false)}
+                alt="cross-icon"
+              />
+            </div>
             {routes.map((route) => (
               <div
                 key={route.path}
@@ -85,6 +95,9 @@ const Layout = ({ pageTitle, children }) => {
             <span>Faizan Ali khan</span>
             <img src={arrowDown} alt="arrowDown" />
           </div>
+        </div>
+        <div>
+          <img src={akira} alt="akira-logo" className={style.akiraTab} />
         </div>
       </div>
       <div className={style.sideBar}>

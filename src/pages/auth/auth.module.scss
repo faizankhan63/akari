@@ -33,6 +33,9 @@
       justify-content: center;
       min-width: 520px;
       gap: 12px;
+      @media (max-width: 550px) {
+        min-width: 100%;
+      }
       button {
         margin-top: 8px;
         display: flex;
@@ -82,7 +85,6 @@
         font-weight: 400;
       }
     }
-
     .termsDiv {
       width: 100%;
       display: flex;

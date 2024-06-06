@@ -63,3 +63,18 @@ a:hover {
   align-items: center;
   margin: 20px 0;
 }
+
+::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 0px !important;
+  display: none;
+  height: 0px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
